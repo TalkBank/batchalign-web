@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-family: 'Lato', sans-serif;
+    background-color: #fafafa;
+
+    width: 100%;
+    height: 100%;
+
+    --offwhite: #f4faff;
+    --offgrey: #dee7e7;
+    --blue: #0D0660;
+    --red: #C1292E;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.callout {
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--blue);
+}
+
+.subtitle {
+    font-weight: 400;
+    font-size: 14px;
+
+    @apply text-gray-700;
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 12px;
+    padding-bottom: 3px;
+    display: inline-block;
+
+    @apply text-gray-500;
+}
+
+.form-input {
+    width: 100%;
+    border: 1px solid var(--offgrey);
+
+    font-size: 14px;
+    transition: border 0.3s;
+
+    outline: none;
+
+    @apply p-1 rounded;
+}
+
+.form-input:hover {
+    border: 1px solid var(--blue);
+}
+
+.form-input:focus {
+    border: 1px solid var(--blue);
+}
+
+.input-group {
+    margin-bottom: 8px;
+}
