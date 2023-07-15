@@ -40,7 +40,7 @@
 
         loading = false;
 
-        alert(res.id);
+        window.location.href=`./${res.id}`;
     }
 
 </script>

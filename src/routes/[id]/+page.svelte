@@ -1,6 +1,13 @@
 <script>
     export let data;
     import { PUBLIC_BACKEND_SERVER } from '$env/static/public';
+    import { onMount } from 'svelte';
+
+    let uri = "";
+
+    onMount(() => {
+        uri = window.location.href;
+    });
 
 
     const downloadURI = (uri, name) => {
@@ -19,7 +26,7 @@
 
 {#if data.status == "processing"}
     <span class="callout"><span style="font-weight: 700">{data.name}</span> is processing... </span><br />
-    <span class="subtitle">The download link to your processed files will be available at the URL of this page once we are ready. Feel free to <a href={window.location.href} style="color: var(--blue); border-bottom: 1px dotted var(--blue)">save it for later</a>.</span>
+    <span class="subtitle">The download link to your processed files will be available at the URL of this page once we are ready. To refresh the status of this job, feel free to <a href={uri} style="color: var(--blue); border-bottom: 1px dotted var(--blue)" on:click={()=>{location.reload()}}>reload this page</a>.</span>
 
     <br />
 {:else if data.status == "error"}
