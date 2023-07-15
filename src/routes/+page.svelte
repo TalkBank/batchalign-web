@@ -45,10 +45,6 @@
 
 </script>
 
-<div class="home-container">
-
-    <div class="centering">
-
         {#if !loading}
         <span class="callout"><span style="font-weight: 700">Howdy!</span> Let's get analyzing.</span><br />
         <span class="subtitle">Please answer the following questions to begin our analysis.</span>
@@ -113,6 +109,4 @@
             <button class="action-button" style="float:right; transform: translateY(15px)" on:click={onSubmit}>Submit</button>
         </div>
         {/if}
-    </div>
-</div>
 
