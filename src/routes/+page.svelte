@@ -78,7 +78,7 @@
         <div class="input-group">
             <span class="form-label">Analysis Type</span>
             <select class="form-input form-select" bind:value={mode} required>
-                <option value="" disabled selected hidden class="form-select-placeholder">tap to select an option...</option>
+                <option value="" disabled selected hidden class="form-select-placeholder">Tap to select an option...</option>
                 <option value="transcribe">ASR and Word Diarization</option>
                 <option value="align">Word Diarization Only</option>
                 <option value="morphotag">Universal Dependencies Analysis</option>
@@ -89,7 +89,7 @@
             {#if files.length > -1}
                 <div class="">
                 {#each files as f, indx}
-                    <div class="form-file"><i class="fa-regular fa-file pr-1" /> <span style="max-width: 90%; display: inline-block">{f.name}</span> <i class="fa-solid fa-xmark cursor-pointer hover:text-red-600 transition-all" style="float:right; transform: translate(-5px, 3px)" on:click={()=> { files.splice(indx,1); files=files }}/></div>
+                    <div class="form-file"><i class="fa-regular fa-file pr-1 ml-1" /> <span style="max-width: 90%; display: inline-block">{f.name}</span> <i class="fa-solid fa-xmark cursor-pointer hover:text-red-600 transition-all" style="float:right; transform: translate(-5px, 3px)" on:click={()=> { files.splice(indx,1); files=files }}/></div>
                 {/each}
                 </div>
             {/if}
