@@ -7,6 +7,7 @@
     let corpus_name = "";
     let lang_code = "en";
     let mode = "";
+    let key = "";
     let file_over = false;
     let files = [];
 
@@ -30,6 +31,7 @@
         formData.append("name", corpus_name);
         formData.append("command", mode);
         formData.append("lang", lang_code);
+        formData.append("key", key);
 
         // call the command!
         let res = await fetch(`http://${PUBLIC_BACKEND_SERVER}/submit`, {
@@ -84,6 +86,19 @@
                 <option value="morphotag">Universal Dependencies Analysis</option>
             </select>
         </div>
+
+        {#if mode == "transcribe"}
+        <div class="input-group">
+            <span class="form-label">Rev.AI API Key</span>
+            <input class="form-input"
+                   required
+                   placeholder="place key here"
+                   on:keypress={e => { if (e.key == " ") e.preventDefault()}}
+            bind:value={key} />
+        </div>
+        {/if}
+
+
         <div class="input-group">
             <span class="form-label">Input Files</span>
             {#if files.length > -1}
