@@ -8,6 +8,9 @@
     let lang_code = "en";
     let mode = "";
     let key = "";
+    if (typeof window !== 'undefined') {
+        key = localStorage.getItem("key");
+    }
     let file_over = false;
     let files = [];
 
@@ -20,6 +23,11 @@
     const onSubmit = async () => {
         // if we don't have a mode selection, return nothing
         if (mode == "") return;
+
+        // if we have a key, persist it
+        if (key && key != "") {
+            localStorage.setItem("key", key);
+        }
 
         // set loading state
         loading = true;
